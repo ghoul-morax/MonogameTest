@@ -1,0 +1,5 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/denis/OneDrive/Документы/GitHub/MonogameTest/MonoGameTest/Content/asteroid.png","C:/Users/denis/OneDrive/Документы/GitHub/MonogameTest/MonoGameTest/Content/bin/DesktopGL/asteroid.xnb","TextureProcessor","Texture2DContent",3174,8185,0,1532855
+"C:/Users/denis/OneDrive/Документы/GitHub/MonogameTest/MonoGameTest/Content/enemy.png","C:/Users/denis/OneDrive/Документы/GitHub/MonogameTest/MonoGameTest/Content/bin/DesktopGL/enemy.xnb","TextureProcessor","Texture2DContent",4423,16469,0,0025933
+"C:/Users/denis/OneDrive/Документы/GitHub/MonogameTest/MonoGameTest/Content/player.png","C:/Users/denis/OneDrive/Документы/GitHub/MonogameTest/MonoGameTest/Content/bin/DesktopGL/player.xnb","TextureProcessor","Texture2DContent",16571,54045,0,004547
+"C:/Users/denis/OneDrive/Документы/GitHub/MonogameTest/MonoGameTest/Content/space.png","C:/Users/denis/OneDrive/Документы/GitHub/MonogameTest/MonoGameTest/Content/bin/DesktopGL/space.xnb","TextureProcessor","Texture2DContent",74417,3040085,0,0986665
