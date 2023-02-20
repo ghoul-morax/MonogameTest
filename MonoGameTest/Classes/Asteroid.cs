@@ -10,6 +10,35 @@ namespace MonoGameSpaceWar.Classes
     {
         private Vector2 position;
         private Texture2D texture;
+        private Rectangle collision;
+        public Rectangle Collision { get { return collision; } }
+
+        public int Width
+        {
+            get
+            {
+                return texture.Width;
+            }
+        }
+        public int Height
+        {
+            get
+            {
+                return texture.Height;
+            }
+        }
+
+        public Vector2 Position
+        {
+            set
+            {
+                position= value;
+            }
+            get
+            {
+                return position;
+            }
+        }
         public Asteroid()
         {
             texture = null;
@@ -24,13 +53,19 @@ namespace MonoGameSpaceWar.Classes
         }
         public void Update()
         {
-            
+            position.Y += 2;
+            collision = new Rectangle((int)position.X, (int)position.Y, Width, Height);
         }
         public void Draw(SpriteBatch spriteBatch)
             {
                 spriteBatch.Draw(texture, position, Color.White);
                 
             }
+        public Asteroid(Vector2 position)
+        {
+            texture = null;
+            this.position = position;
+        }
 
     }
 }

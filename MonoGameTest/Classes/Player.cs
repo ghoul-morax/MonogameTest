@@ -18,6 +18,8 @@ namespace MonoGameSpaceWar.classes
         private Texture2D texture;
         private TypePlayer typePlayer;
         private float speed;
+        private Rectangle collision;
+        public Rectangle Collision { get { return collision; } }
         
         public Player()
         {
@@ -73,6 +75,7 @@ namespace MonoGameSpaceWar.classes
             }
             #endregion
 
+            collision = new Rectangle((int)position.X, (int) position.Y, texture.Width, texture.Height);
 
 
         }
