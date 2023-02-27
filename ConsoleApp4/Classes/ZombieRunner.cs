@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ConsoleApp4.Classes.Interfaces;
+using ConsoleApp4.Classes.Intersaces;
 
 namespace ConsoleApp4.Classes
 {
-    internal class ZombieRunner:Actor, IRun
+    internal class ZombieRunner:Actor, IRun, ISwim
     {
         public ZombieRunner(int x, int y, string name) : base(x, y, name) { }
 
@@ -21,6 +22,11 @@ namespace ConsoleApp4.Classes
         public void Run()
         {
             Console.WriteLine("[ZOMBIE RUNNER] RUNNING!");
+        }
+
+        public void Swim()
+        {
+            Console.WriteLine("[ZOMBIE RUNNER] Swim");
         }
     }
 }

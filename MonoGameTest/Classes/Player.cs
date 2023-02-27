@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using MonoGameSpaceWar.Classes;
 
 namespace MonoGameSpaceWar.classes
 {
@@ -19,6 +20,9 @@ namespace MonoGameSpaceWar.classes
         private TypePlayer typePlayer;
         private float speed;
         private Rectangle collision;
+        private List<Bullet> bulletList = new List<Bullet>();
+        private int time = 0;
+        private int TimeMax = 60;
         public Rectangle Collision { get { return collision; } }
         
         public Player()
@@ -27,13 +31,15 @@ namespace MonoGameSpaceWar.classes
             texture = null;
             typePlayer = TypePlayer.Beginner;
             speed = 8;
+           
         }
 
-        public void LoadContent(ContentManager manager)
+        public void LoadContent(ContentManager content)
         {
-           texture =  manager.Load<Texture2D>("player");
+           texture =  content.Load<Texture2D>("player");
+           
         }
-        public void Update()
+        public void Update(ContentManager content)
         {
             #region Movement
             KeyboardState keyboardState = Keyboard.GetState();
@@ -76,13 +82,30 @@ namespace MonoGameSpaceWar.classes
             #endregion
 
             collision = new Rectangle((int)position.X, (int) position.Y, texture.Width, texture.Height);
-
+            time++;
+            if (time>TimeMax)
+            {
+                Bullet bullet = new Bullet(position);
+                bullet.LoadContent(content);
+                bulletList.Add(bullet);
+                time = 0;
+            }
+            for(int i = 0; i<bulletList.Count; i++)
+            {
+                Bullet bullet = bulletList[i];
+                bullet.Update();
+            }
 
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(texture, position, Color.White);
+            foreach(var bullet in bulletList)
+            {
+                bullet.Draw(spriteBatch);
+            }
+          
         }
     }
 }

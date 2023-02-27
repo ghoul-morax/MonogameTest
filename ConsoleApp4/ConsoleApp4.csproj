@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Classes\Actor.cs" />
     <Compile Include="Classes\Intersaces\IRun.cs" />
+    <Compile Include="Classes\Intersaces\ISwim.cs" />
     <Compile Include="Classes\Zombie.cs" />
     <Compile Include="Classes\ZombieRunner.cs" />
     <Compile Include="Classes\ZombieSpit.cs" />
