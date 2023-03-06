@@ -11,7 +11,7 @@ namespace MonoGameSpaceWar.Classes
         private Vector2 position;
         private Texture2D texture;
         private Rectangle collision;
-        private bool isAlive;
+        private bool isAlive = true;
         public bool IsAlive { get { return isAlive; } set { isAlive = value; } }
         public Rectangle Collision { get { return collision; } }
 

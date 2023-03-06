@@ -124,7 +124,7 @@ namespace MonoGameTest
                 }
                 if(!asteroid.IsAlive)
                 {
-                    asteroids.Remove(asteroids[i]);
+                    asteroids.Remove(asteroid);
                     i--;
                 }
                 
