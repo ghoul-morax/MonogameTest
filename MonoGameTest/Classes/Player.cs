@@ -22,8 +22,9 @@ namespace MonoGameSpaceWar.classes
         private Rectangle collision;
         private List<Bullet> bulletList = new List<Bullet>();
         private int time = 0;
-        private int TimeMax = 60;
+        private int TimeMax = 30;
         public Rectangle Collision { get { return collision; } }
+        public List<Bullet> Bullets { get { return bulletList; } }
         
         public Player()
         {
@@ -85,7 +86,9 @@ namespace MonoGameSpaceWar.classes
             time++;
             if (time>TimeMax)
             {
-                Bullet bullet = new Bullet(position);
+                Bullet bullet = new Bullet();
+                bullet.Position = new Vector2(position.X + texture.Width/2 - bullet.Width/2,position.Y + bullet.Height/2);
+
                 bullet.LoadContent(content);
                 bulletList.Add(bullet);
                 time = 0;
@@ -94,6 +97,18 @@ namespace MonoGameSpaceWar.classes
             {
                 Bullet bullet = bulletList[i];
                 bullet.Update();
+            }
+            for(int i = 0; i < bulletList.Count;i++)
+            {
+                if (!bulletList[i].IsAlive)
+                {
+                    bulletList.RemoveAt(i);
+                    i--;
+                }
+            }
+            if(keyboardState.IsKeyDown(Keys.Q))
+            {
+                int a = 1;
             }
 
         }

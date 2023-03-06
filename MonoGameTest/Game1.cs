@@ -61,6 +61,7 @@ namespace MonoGameTest
             space.Update();
             //asteroid.Update();
             UpdateAsteroids();
+            CheckCollision();
             base.Update(gameTime);
         }
 
@@ -83,6 +84,24 @@ namespace MonoGameTest
 
             base.Draw(gameTime);
         }
+        private void CheckCollision()
+        {
+            foreach (var asteroid in asteroids)
+            {
+                if(player.Collision.Intersects(asteroid.Collision))
+                {
+                    asteroid.IsAlive = false;
+                }
+                foreach(var bullet in player.Bullets)
+                {
+                    if(asteroid.Collision.Intersects(bullet.Collision))
+                    {
+                        asteroid.IsAlive = false;
+                        bullet.IsAlive = false;
+                    }
+                }
+            }
+        }
         private void UpdateAsteroids()
         {
             for (int i = 0; i < asteroids.Count; i++)
@@ -101,6 +120,11 @@ namespace MonoGameTest
                 {
 
                     asteroids.Remove(asteroid);
+                    i--;
+                }
+                if(!asteroid.IsAlive)
+                {
+                    asteroids.Remove(asteroids[i]);
                     i--;
                 }
                 
