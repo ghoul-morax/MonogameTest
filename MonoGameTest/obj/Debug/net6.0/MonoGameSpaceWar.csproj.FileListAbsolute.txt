@@ -27,3 +27,4 @@ C:\Users\denis\OneDrive\Документы\GitHub\MonogameTest\MonoGameTest\bin\
 C:\Users\denis\OneDrive\Документы\GitHub\MonogameTest\MonoGameTest\bin\Debug\net6.0\Content\enemy.xnb
 C:\Users\denis\OneDrive\Документы\GitHub\MonogameTest\MonoGameTest\bin\Debug\net6.0\Content\player.xnb
 C:\Users\denis\OneDrive\Документы\GitHub\MonogameTest\MonoGameTest\bin\Debug\net6.0\Content\space.xnb
+C:\Users\denis\OneDrive\Документы\GitHub\MonogameTest\MonoGameTest\bin\Debug\net6.0\Content\explosion3.xnb

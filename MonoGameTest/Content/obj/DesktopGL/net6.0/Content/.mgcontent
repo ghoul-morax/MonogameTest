@@ -8,8 +8,10 @@
     <File>C:/Users/denis/OneDrive/Документы/GitHub/MonogameTest/MonoGameTest/Content/enemy.png</File>
     <File>C:/Users/denis/OneDrive/Документы/GitHub/MonogameTest/MonoGameTest/Content/player.png</File>
     <File>C:/Users/denis/OneDrive/Документы/GitHub/MonogameTest/MonoGameTest/Content/space.png</File>
+    <File>C:/Users/denis/OneDrive/Документы/GitHub/MonogameTest/MonoGameTest/Content/explosion3.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

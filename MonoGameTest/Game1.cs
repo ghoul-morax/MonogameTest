@@ -19,7 +19,12 @@ namespace MonoGameTest
         private Player player;
         private Space space;
         //private Asteroid asteroid;
+
+
         private List<Asteroid> asteroids;
+        private List<Explosion> explosions;
+
+        private Explosion explosion;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -36,6 +41,7 @@ namespace MonoGameTest
             space = new Space();
             //asteroid = new Asteroid();
             asteroids = new List<Asteroid>();
+            explosions= new List<Explosion>();
 
             base.Initialize();
         }
@@ -47,6 +53,7 @@ namespace MonoGameTest
             // TODO: use this.Content to load your game content here
             player.LoadContent(Content);
             space.LoadContent(Content);
+            
             //asteroid.LoadContent(Content);
             
         }
@@ -62,6 +69,7 @@ namespace MonoGameTest
             //asteroid.Update();
             UpdateAsteroids();
             CheckCollision();
+            
             base.Update(gameTime);
         }
 
@@ -79,7 +87,6 @@ namespace MonoGameTest
             {
                 asteroid.Draw(_spriteBatch);
             }
-
             _spriteBatch.End();
 
             base.Draw(gameTime);
